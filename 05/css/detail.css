@@ -1,0 +1,30 @@
+.detail-box > div:nth-child(1){
+    background-color: rgb(242,242,242);
+    padding: 30px 10%;
+    border-bottom: solid 1px rgb(216,216,216);
+}
+.detail-box > div:nth-child(1) div:nth-child(1){
+    border-left: 5px solid rgb(207,22,53);
+    height: 20px;
+    font-size: 18px;
+}
+.detail-box > div:nth-child(1) div:nth-child(2){
+    padding: 15px 0;
+    font-size: 14px;
+    color: rgb(194, 194, 194);
+}
+.detail-box > div:nth-child(2){
+    padding: 30px 10%;
+}
+.detail-box > div:nth-child(2) > div{
+    text-align: center;
+}
+.detail-box > div:nth-child(2) img{
+    width: 60%;
+}
+.detail-box > div:nth-child(2) p{
+    padding: 30px 10%;
+    font-size: 16px;
+    line-height: 25px;
+    white-space: pre-line;
+}

@@ -1,0 +1,32 @@
+.other-box > div:nth-child(1){
+    background-color: rgb(242,242,242);
+    line-height: 60px;
+    text-align: center;
+}
+.other-box > div:nth-child(2){
+    height: 500px;
+    padding: 30px 40px;
+    display: flex;
+}
+.other-box > div:nth-child(2) > div{
+    flex: 0 0 50%;
+    width: 50%;
+}
+.other-box > div:nth-child(2) > div:nth-child(2){
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.other-box > div:nth-child(2) > div:nth-child(2) p{
+    margin-bottom: 30px;
+}
+.other-box > div:nth-child(2) > div:nth-child(2) img{
+    width: 30px;
+}
+.other-box > div:nth-child(2) > div:nth-child(2) span{
+    padding: 0 20px;
+    position: relative;
+    top: -10px;
+    color: rgb(110,110,110);
+}
