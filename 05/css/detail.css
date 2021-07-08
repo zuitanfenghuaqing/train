@@ -5,7 +5,6 @@
 }
 .detail-box > div:nth-child(1) div:nth-child(1){
     border-left: 5px solid rgb(207,22,53);
-    height: 20px;
     font-size: 18px;
 }
 .detail-box > div:nth-child(1) div:nth-child(2){
