@@ -17,7 +17,7 @@ module.exports = {
     rules: {
         'semi': 0,
         'no-empty': 0,
-        "comma-dangle": 1,
+        "comma-dangle": 0,
         "no-eval": 1,
         "no-continue": 0
     }

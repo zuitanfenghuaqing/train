@@ -6,7 +6,9 @@ function onStatus (res){
   function parseJson (res){
     return res.json()
   }
-function request (url, param, method = 'GET'){
+
+//封装fetch
+export default function request (url, param, method = 'GET'){
     return new Promise((resolve, reject)=>{
         let params = { method }
         if(method !== 'GET'){
@@ -22,11 +24,10 @@ function request (url, param, method = 'GET'){
             .then(onStatus)
             .then(parseJson)
             .then(data=>{
-                console.log(data)
-                // resolve(data)
+                resolve(data)
             })
             .catch(err=>{
-                // reject(err)
+                reject(err)
             })
     })
 }

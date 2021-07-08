@@ -16,7 +16,7 @@
   "lint-staged": {
     "src/**/*.{js.jsx}": [
       "prettier --write",
-      "eslint --fix --color",
+      "eslint --fix --config .eslintrc.js --color",
       "git add"
     ]
   },
@@ -35,9 +35,12 @@
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.6",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
@@ -45,9 +48,12 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "html-webpack-plugin": "^5.3.2",
-    "husky": "^7.0.1",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
+    "style-loader": "^3.0.0",
+    "url-loader": "^4.1.1",
     "webpack": "^5.43.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"

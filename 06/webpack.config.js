@@ -24,7 +24,29 @@ module.exports = {
                       "@babel/preset-react"],
                       plugins: ['@babel/plugin-transform-runtime']
                   }
-                },
+                }
+            }, {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            lessOptions: {
+                                strictMath: true
+                            }
+                        }
+                    }
+                ]
+            }, {
+                test: /\.(png|jpg|jpeg|gif)$/i,
+                include: path.resolve(__dirname, 'src'),
+                use: [
+                    {
+                        loader: 'url-loader'
+                    }
+                ]
             }
         ]
     },
@@ -41,13 +63,14 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin()
     ],
     devServer:{
+        host: 'localhost',
         port: 8081,
         open: true,
         hot:true,
         proxy: {
             '/repositorie': {
                 target: 'https://api.github.com/search',
-                charngeOrigin: true,
+                changeOrigin: true,
                 secure: false
             }
         }
