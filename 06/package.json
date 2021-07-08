@@ -5,17 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --progress --color --config webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "lint-staged"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zuitanfenghuaqing/train.git"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+  "pre-commit": "lint",
   "lint-staged": {
     "src/**/*.{js.jsx}": [
       "prettier --write",

@@ -7,7 +7,7 @@ export default class Home extends Component{
 
         }
     }
-    componentDi dCatch(){
+    componentDidCat ch(){
 
     }
     render(){
