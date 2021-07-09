@@ -6,3 +6,72 @@
 .item-active{
   color: rgb(190, 62, 30);
 }
+.main-content{
+  padding: 20px 40px;
+}
+.main-content > div:nth-child(1){
+  span{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    &:hover, &.active{
+      color: #1890ff;
+    }
+    &:nth-child(1){
+      margin-right: 30px;
+    }
+  }
+}
+.main-content > div:nth-child(2) > div:nth-child(2) > div{
+  width: 100%;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.row{
+  display: flex;
+  width: 100%;
+}
+.battle-content{
+  .title-block{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0;
+  }
+  & > div:nth-child(2){
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    & > div{
+      &> div{
+        margin: 8px 16px;
+      }
+      &>div:nth-child(2){
+        background-color: #eee;
+        padding: 32px;
+      }
+      img{
+        width: 120px;
+      }
+    }
+  }
+  .submit-box{
+    justify-content: center;
+    &>div{
+      margin-right:30px ;
+      &>div:nth-child(1){
+        margin: 20px 0;
+      }
+    }
+    input{
+      width: 250px;
+      height: 32px;
+      line-height: 32px;
+    }
+    button{
+      padding: 5px;
+    }
+  }
+}

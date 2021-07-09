@@ -39,15 +39,10 @@ module.exports = {
                         }
                     }
                 ]
-            }, {
-                test: /\.(png|jpg|jpeg|gif)$/i,
-                include: path.resolve(__dirname, 'src'),
-                use: [
-                    {
-                        loader: 'url-loader'
-                    }
-                ]
-            }
+            },  {
+                test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+                type: 'asset/resource',
+              }
         ]
     },
     resolve: { extensions: [".tsx", ".ts", ".js", ".jsx" ] },
