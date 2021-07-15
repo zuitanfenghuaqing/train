@@ -6,8 +6,8 @@ function resolve(v:string){
 }
 
 export default defineConfig({
-  // base: '/',
-  // hash: true,
+  base: '/',
+  hash: true,
   history: { type: 'hash' },
   nodeModulesTransform: {
     type: 'none',
