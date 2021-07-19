@@ -92,6 +92,7 @@ export default class ShoppingCarBox  extends Component {
     this.setState({ commodityList })
   }
   cacheData=(data)=>{
+    this.props.update(data)
     sessionStorage.car = JSON.stringify(data)
   }
   countNumber=()=>{

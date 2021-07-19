@@ -7,7 +7,6 @@ export default class ClothingCommodity extends Component {
     super(props)
     this.state = {
       list: JSON.parse(JSON.stringify(define.list)),
-      searchN: define.list.length,
       sizeList: props.sizeList
     }
   }
@@ -22,15 +21,15 @@ export default class ClothingCommodity extends Component {
     }
   }
   render() {
-    const { list, searchN, size } = this.state
+    const { list } = this.state
     return (
       <div className='commodity-info'>
         <div>
           <div> 
-            { searchN } Product(s) found.
+            { list.length } Product(s) found.
           </div>
           <div>
-            Order by 
+            Order by&nbsp;
             <select id='commodity-sort' onChange={this.onSelect}>
               {
                 define.listSort.map((opt, i)=>(

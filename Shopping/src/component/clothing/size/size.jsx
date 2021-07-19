@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Button } from 'antd'
+import { Button, message } from 'antd'
 import { StarOutlined } from '@ant-design/icons';
 
 export default class size extends Component {
@@ -26,12 +26,17 @@ export default class size extends Component {
           <p>Leve a star on Github if this
             repository was useful:)</p>
           <div>
-            <Button icon={<StarOutlined />}>start</Button>
+            <Button icon={<StarOutlined />} onClick={this.staradd}>start</Button>
             <span>{star}</span>
           </div>
         </div>
       </div>
     )
+  }
+  staradd=()=>{
+    let { star } = this.state
+    message.success('关注成功')
+    this.setState({ star: ++star })
   }
   checkedArr = (v)=>{
     let { active } = this.state

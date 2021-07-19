@@ -8,6 +8,7 @@
     <link href="./css/news.css" rel="stylesheet" type="text/css"/>
     <link href="./css/common.css" rel="stylesheet" type="text/css"/>
     <script src='./js/common.js' type="text/javascript" charset="utf-8"></script>
+    <script src='./js/request.js' type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
     <header>
@@ -128,7 +129,10 @@
         lazyload();
         document.addEventListener('scroll', lazyload, false);
         window.addEventListener('DOMContentLoaded', ()=>{
-            request('https://m.maoyan.com/ajax/movieOnInfoList')
+            let xhr = new XMLHttpRequest()
+            xhr.open('GET','http://baobab.kaiyanapp.com/api/v4/discovery/hot?start=1&num=1')
+            xhr.send()
+            // request('')
         })
     </script>
 </body>

@@ -40,7 +40,7 @@ export default class IndexPage extends Component {
               </div> 
             ) : (
               <div>
-                <Car list={commodityList} close={()=> this.setState({ catShow: false })} />
+                <Car list={commodityList} update={(commodityList)=> this.setState({ commodityList })} close={()=> this.setState({ catShow: false })} />
               </div>
             )
           }

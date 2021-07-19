@@ -18,7 +18,7 @@
     position: relative;
     width: 0;
     height: 0;
-    left: 96%;
+    left: calc(100% - 22px);
     top: -22px;
 }
 .news-content .title-block > span:nth-child(2){
@@ -58,4 +58,20 @@
 .news-content > div:nth-child(2) .cont-box div p{
     font-family: emoji;
     cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+    .news-content > div:nth-child(2) .cont-box{
+        flex: 0 0 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        border-bottom: solid 1px black;
+        padding-bottom: 30px;
+    }
+    .news-content > div:nth-child(2) .cont-box > div{
+        flex: 0 0 100%;
+        margin-top: 20px;
+    }
+    .news-content > div:nth-child(2) .cont-box:nth-child(2n){
+        margin-left: 0px;
+    }
 }

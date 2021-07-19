@@ -4,7 +4,9 @@
   "description": "作业",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --progress --color --config webpack.config.js",
+    "start": "webpack serve --env NODE_ENV=development  --progress --color --config webpack.config.js",
+    "build": "webpack --env NODE_ENV=production",
+    "watch": "webpack --env NODE_ENV=production --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "lint-staged"
   },
@@ -60,6 +62,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "antd": "^4.16.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
