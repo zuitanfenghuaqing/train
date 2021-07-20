@@ -101,3 +101,10 @@ header{
     line-height: 60px;
     text-align: center;
 }
+footer{
+    background-color: rgb(215,215,215);
+}
+footer iframe{
+    background-color: rgb(215,215,215);
+    margin-bottom: -4px;
+}

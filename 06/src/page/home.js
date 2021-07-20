@@ -20,7 +20,7 @@ export default class Home extends Component{
       const { data = [], active, hasMore, loading } = this.state
       return(
           <div className='main-content'>
-            <Spin spinning={loading}>
+            <Spin spinning={loading} wrapperClassName={'loading-box'} >
               <div className='top-menu'>
                 {
                   ['Popular', 'Battle'].map((opt, i)=>(<span key={i} className={Number(active) === i ? 'active': ''}  onClick={()=>{
@@ -33,7 +33,7 @@ export default class Home extends Component{
                 {
                   !active ? (
                     <Fragment>
-                      <Header callback={this.callback} />
+                      <Header callback={this.callBack} />
                       <div style={{ display: "flex", width: "100%", flexWrap: "wrap", justifyContent: 'space-evenly' }}>
                       <InfiniteScroll
                         initialLoad={false} // 不让它进入直接加载
@@ -95,19 +95,23 @@ export default class Home extends Component{
           </div>
       )
     }
-    callback=(url)=>{
+    callBack=(url)=>{
       this.setState({ origin: url, loading: true, data: [] }, ()=>{
-        this.itemChange(1)
+        this.iData(1)
       })
     }
-    itemChange=(page = 1)=>{
+    iData=(page)=>{
       let { data, origin } = this.state
       let url = `${origin}&page=${page}`
       request(url).then(iData=>{
-        this.setState({ data: [...data, ...iData.items] })
+        this.setState({ data: [...data, ...iData.items], hasMore: true })
+      }).catch(err=>{
+        console.log(err)
       }).finally((v)=>{
-        console.log(v)
-        // this.setState({ loading: false })
+        this.setState({ loading: false })
       })
+    }
+    itemChange=(page = 1)=>{
+      this.setState({ loading: true, hasMore: false }, ()=> this.iData(page))
     }
 }

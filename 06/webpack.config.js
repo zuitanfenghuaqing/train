@@ -24,7 +24,12 @@ module.exports = (env)=>{
                     options: {
                         presets: ["@babel/preset-env",
                         "@babel/preset-react"],
-                        plugins: ['@babel/plugin-transform-runtime']
+                        plugins: ['@babel/plugin-transform-runtime', [
+                            'import', {
+                                "libraryName": 'antd',
+                                style: 'css'
+                            }
+                        ]]
                     }
                     }
                 }, {
