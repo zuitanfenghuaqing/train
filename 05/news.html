@@ -117,22 +117,54 @@
                 </div>
             </div>
         </div>
+        <div class="page-box">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+        </div>
     </article>
     <footer>
         <iframe src="./footer.html" frameborder='0' width="100%" height="350px" ></iframe>
     </footer>
     <script>
+        let list = []
         document.querySelector('.main-content').addEventListener('click', (e)=>{
             let init = ['H4', 'IMG', 'P']
             if(e.target && init.some(opt=> opt === e.target.nodeName)) window.location.href = './detail.html'
         })
         lazyload();
         document.addEventListener('scroll', lazyload, false);
+        function changePage (num){
+            num = Number(num) - 1
+            let start = num ? ( (num - 1) * 8) : 0, end = num * 8,
+                init = list.slice(start, end)
+            document.querySelectorAll('.cont-box img').forEach((opt, i)=>{
+                if(!num){
+                    opt.src = './img/thunder.jpg'
+                }else{
+                    opt.src=init[i].owner.avatar_url
+                }
+            })
+        }
+        function checkedItem (){
+            document.querySelectorAll('.page-box span').forEach(opt=> opt.classList.remove('active'))
+        }
+        function send(page = 1){
+            let url = `https://api.github.com/search/repositories?q=stars:3E1+language:javascript&sort=stars&order=desc&type=Repositories&page=${page}`
+            request(url).then(data=>{
+                list = data.items.slice(0, 16)
+            })
+            document.querySelector('.page-box').addEventListener('click', (e)=>{
+                const { nodeName, innerText } = e.target
+                if(nodeName === 'SPAN'){
+                    changePage(Number(innerText))
+                    checkedItem()
+                    e.target.classList.add('active')
+                }
+            })
+        }
         window.addEventListener('DOMContentLoaded', ()=>{
-            let xhr = new XMLHttpRequest()
-            xhr.open('GET','http://baobab.kaiyanapp.com/api/v4/discovery/hot?start=1&num=1')
-            xhr.send()
-            // request('')
+            send()
         })
     </script>
 </body>

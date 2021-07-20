@@ -29,7 +29,7 @@ export default class Home extends Component{
                   }}>{opt}</span>))
                 }
               </div>
-              {/* <div>
+              <div>
                 {
                   !active ? (
                     <Fragment>
@@ -90,7 +90,7 @@ export default class Home extends Component{
                     </Fragment>
                   ) : <Batter />
                 }
-              </div> */}
+              </div>
             </Spin>
           </div>
       )

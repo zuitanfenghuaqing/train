@@ -68,7 +68,27 @@
     left: 50%;
     transform: translateX(-50%);
 }
-
+@media (max-width: 1300px){
+    .team-detail .item-box{
+        flex-wrap: wrap;
+    }
+    .team-detail .item-box > div{
+        flex: 0 0 100%;
+        width: 100%;
+        text-align: center;
+    }
+    .team-detail >div:nth-child(3) >div:nth-child(1){
+        order: 2;
+    }
+    .team-detail .item-box .detail-box{
+        height: auto;
+        min-height: auto;
+        padding-bottom: 20px;
+    }
+    .team-detail .item-box img{
+        width: 60%;
+    }
+}
 section.dynamic{
     margin: 30px 0;
 }

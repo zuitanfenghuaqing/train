@@ -29,11 +29,27 @@
 }
 .news-content > div:nth-child(2){
     width: 100%;
-    padding: 20px 10% 60px;
+    padding: 20px 10% 20px;
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
     background-color: white;
+}
+.page-box{
+    text-align: center;
+    padding-bottom: 30px;
+    background-color: white;
+}
+.page-box span{
+    display: inline-block;
+    padding: 4px 12px;
+    border: solid 1px black;
+    cursor: pointer;
+}
+.page-box span:hover,
+.page-box span.active{
+    background-color: black;
+    color: white;
 }
 .news-content > div:nth-child(2) .cont-box{
     flex: 0 0 calc(100% / 2 - 15px);

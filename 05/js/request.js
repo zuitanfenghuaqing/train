@@ -5,12 +5,12 @@ function request (url, method = 'GET'){
             ['Content-Type']:'application/json; charset=UTF-8'
           }
         fetch(url, params).then(data=> {
-            if(res.status >= 200 && res.status < 300 ) return res
-            throw res
+            if(data.status >= 200 && data.status < 300 ) return data
+            throw data
         }).then(data=>{ 
             return data.json()
         }).then(data=>{
-                console.log(data)
-            })
+            resolve(data)
+        }).catch(err=> reject(err))
     })
 }
