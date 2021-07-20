@@ -42,7 +42,7 @@ export default class Home extends Component{
                         hasMore={hasMore} // 是否继续监听滚动事件 true 监听 | false 不再监听
                         useWindow={true} // 不监听 window 滚动条
                       >                   {
-                          data.length && data.map((opt, i)  =>{
+                          data.length ? data.map((opt, i)  =>{
                             const { name, stargazers_count, forks_count, owner: {
                               avatar_url
                             } } = opt
@@ -83,7 +83,7 @@ export default class Home extends Component{
                                 </div>
                               </div>
                             )
-                          })
+                          }) : null
                         }
                       </InfiniteScroll>
                       </div>
@@ -96,7 +96,7 @@ export default class Home extends Component{
       )
     }
     callback=(url)=>{
-      this.setState({ origin: url, loading: true }, ()=>{
+      this.setState({ origin: url, loading: true, data: [] }, ()=>{
         this.itemChange(1)
       })
     }
