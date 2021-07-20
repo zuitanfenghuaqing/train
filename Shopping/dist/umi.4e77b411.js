@@ -18550,7 +18550,7 @@
       return E
     }
     var ke = {
-      basename: "/"
+      basename: "./"
     };
     window.routerBase && (ke.basename = window.routerBase);
     var Ce = Object({
