@@ -19,7 +19,8 @@ export default function request (url, param, method = 'GET'){
         }
         params.headers = {
             ['Content-Type']:'application/json; charset=UTF-8'
-          }
+        }
+        if(window.location.hostname !== 'localhost') url = `https://api.github.com/search${url}`
         fetch(url, params)
             .then(onStatus)
             .then(parseJson)
