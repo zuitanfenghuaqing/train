@@ -9,5 +9,15 @@
 <body>
     <a href="./a.html">goto a page</a>
     <a href="./b.html">goto b page</a>
+    <script>
+        window.addEventListener('DOMContentLoaded', ()=>{
+            let xhr = new XMLHttpRequest()
+            const params = new FormData()
+            
+            xhr.open('POST', 'https://www.free-api.com/urltask')
+            xhr.addEventListener('load', (data)=>console.log(data))
+            xhr.send()            
+        })
+    </script>
 </body>
 </html>
